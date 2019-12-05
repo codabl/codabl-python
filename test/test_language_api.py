@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Brainrex General Sentiment API
+    Brainrex API
 
-    Runs the price sentiment service of api.brainrex.com/sentiment/  # noqa: E501
+    Provides anomaly detection and natural language processing technlogies to blockchain developers.  # noqa: E501
 
     OpenAPI spec version: 1.0.1
     
@@ -39,7 +39,7 @@ class TestLanguageApi(unittest.TestCase):
     def test_language_get_general_sentiment(self):
         """Test case for language_get_general_sentiment
 
-        Sentiment analysis score using a model trained for buy signals.  # noqa: E501
+        This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.  # noqa: E501
         """
         pass
 

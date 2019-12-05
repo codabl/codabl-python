@@ -2,9 +2,9 @@
 
 # flake8: noqa
 """
-    Brainrex General Sentiment API
+    Brainrex API
 
-    Runs the price sentiment service of api.brainrex.com/sentiment/  # noqa: E501
+    Provides anomaly detection and natural language processing technlogies to blockchain developers.  # noqa: E501
 
     OpenAPI spec version: 1.0.1
     
@@ -15,17 +15,20 @@
 from __future__ import absolute_import
 
 # import models into model package
+from brainrex.models.candle_request import CandleRequest
 from brainrex.models.candle_response import CandleResponse
 from brainrex.models.error import Error
-from brainrex.models.exchange_name import ExchangeName
+from brainrex.models.exchange import Exchange
+from brainrex.models.exchange_assets_response import ExchangeAssetsResponse
+from brainrex.models.exchange_assets_response_inner import ExchangeAssetsResponseInner
 from brainrex.models.ohclv import OHCLV
+from brainrex.models.orderbook_request import OrderbookRequest
+from brainrex.models.orderbook_response import OrderbookResponse
 from brainrex.models.point_time_series import PointTimeSeries
 from brainrex.models.series_response import SeriesResponse
 from brainrex.models.series_response_point import SeriesResponsePoint
+from brainrex.models.supported_exchanges import SupportedExchanges
 from brainrex.models.text import Text
-from brainrex.models.text1 import Text1
-from brainrex.models.text2 import Text2
-from brainrex.models.text3 import Text3
-from brainrex.models.text4 import Text4
-from brainrex.models.text5 import Text5
+from brainrex.models.ticker_response import TickerResponse
+from brainrex.models.ticker_response_inner import TickerResponseInner
 from brainrex.models.time_series import TimeSeries

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **crypto_get_candle_data**
-> CandleResponse crypto_get_candle_data(text)
+> CandleResponse crypto_get_candle_data(candle_request)
 
 Downloads candle format market data
 
@@ -34,11 +34,11 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = brainrex.IntegrationsApi(brainrex.ApiClient(configuration))
-text = brainrex.Text() # Text | Exchange, trading pair and date rage for data
+candle_request = brainrex.CandleRequest() # CandleRequest | The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console
 
 try:
     # Downloads candle format market data
-    api_response = api_instance.crypto_get_candle_data(text)
+    api_response = api_instance.crypto_get_candle_data(candle_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->crypto_get_candle_data: %s\n" % e)
@@ -48,7 +48,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | [**Text**](Text.md)| Exchange, trading pair and date rage for data | 
+ **candle_request** | [**CandleRequest**](CandleRequest.md)| The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console | 
 
 ### Return type
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **crypto_get_exchange_assets**
-> OHCLV crypto_get_exchange_assets(exchange_name)
+> ExchangeAssetsResponse crypto_get_exchange_assets(exchange)
 
 Gets all currency pairs traded in selected exchange
 
@@ -88,11 +88,11 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = brainrex.IntegrationsApi(brainrex.ApiClient(configuration))
-exchange_name = brainrex.ExchangeName() # ExchangeName | Name of the cryptocurrency exchange
+exchange = brainrex.Exchange() # Exchange | Name of the cryptocurrency exchange
 
 try:
     # Gets all currency pairs traded in selected exchange
-    api_response = api_instance.crypto_get_exchange_assets(exchange_name)
+    api_response = api_instance.crypto_get_exchange_assets(exchange)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->crypto_get_exchange_assets: %s\n" % e)
@@ -102,11 +102,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchange_name** | [**ExchangeName**](ExchangeName.md)| Name of the cryptocurrency exchange | 
+ **exchange** | [**Exchange**](Exchange.md)| Name of the cryptocurrency exchange | 
 
 ### Return type
 
-[**OHCLV**](OHCLV.md)
+[**ExchangeAssetsResponse**](ExchangeAssetsResponse.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **crypto_get_orderbooks**
-> OHCLV crypto_get_orderbooks(text)
+> OrderbookResponse crypto_get_orderbooks(orderbook_request)
 
 Downloads candle format market data
 
@@ -142,11 +142,11 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = brainrex.IntegrationsApi(brainrex.ApiClient(configuration))
-text = brainrex.Text1() # Text1 | Exchange, trading pair and date rage for data
+orderbook_request = brainrex.OrderbookRequest() # OrderbookRequest | Exchange, trading pair and date rage for data
 
 try:
     # Downloads candle format market data
-    api_response = api_instance.crypto_get_orderbooks(text)
+    api_response = api_instance.crypto_get_orderbooks(orderbook_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->crypto_get_orderbooks: %s\n" % e)
@@ -156,11 +156,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | [**Text1**](Text1.md)| Exchange, trading pair and date rage for data | 
+ **orderbook_request** | [**OrderbookRequest**](OrderbookRequest.md)| Exchange, trading pair and date rage for data | 
 
 ### Return type
 
-[**OHCLV**](OHCLV.md)
+[**OrderbookResponse**](OrderbookResponse.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **crypto_get_supported_exchanges**
-> crypto_get_supported_exchanges()
+> SupportedExchanges crypto_get_supported_exchanges()
 
 Gets all cryptocurrency exchanges supported by the Brainrex API
 
@@ -199,7 +199,8 @@ api_instance = brainrex.IntegrationsApi(brainrex.ApiClient(configuration))
 
 try:
     # Gets all cryptocurrency exchanges supported by the Brainrex API
-    api_instance.crypto_get_supported_exchanges()
+    api_response = api_instance.crypto_get_supported_exchanges()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->crypto_get_supported_exchanges: %s\n" % e)
 ```
@@ -209,7 +210,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**SupportedExchanges**](SupportedExchanges.md)
 
 ### Authorization
 
@@ -223,7 +224,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **crypto_get_ticker**
-> OHCLV crypto_get_ticker(text)
+> TickerResponse crypto_get_ticker(exchange)
 
 Downloads candle format market data
 
@@ -245,11 +246,11 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = brainrex.IntegrationsApi(brainrex.ApiClient(configuration))
-text = brainrex.Text2() # Text2 | Get ticker data from specified crypto exchange
+exchange = brainrex.Exchange() # Exchange | Get ticker data from specified crypto exchange
 
 try:
     # Downloads candle format market data
-    api_response = api_instance.crypto_get_ticker(text)
+    api_response = api_instance.crypto_get_ticker(exchange)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->crypto_get_ticker: %s\n" % e)
@@ -259,11 +260,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | [**Text2**](Text2.md)| Get ticker data from specified crypto exchange | 
+ **exchange** | [**Exchange**](Exchange.md)| Get ticker data from specified crypto exchange | 
 
 ### Return type
 
-[**OHCLV**](OHCLV.md)
+[**TickerResponse**](TickerResponse.md)
 
 ### Authorization
 

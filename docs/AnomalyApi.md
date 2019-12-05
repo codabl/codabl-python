@@ -4,13 +4,13 @@ All URIs are relative to *https://api.bitlongs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**anomaly_batch**](AnomalyApi.md#anomaly_batch) | **POST** /anomaly/json/detect | Detects anomaly in historical data
+[**anomaly_batch**](AnomalyApi.md#anomaly_batch) | **POST** /anomaly/json/detect | Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input
 
 
 # **anomaly_batch**
 > list[bool] anomaly_batch(request=request)
 
-Detects anomaly in historical data
+Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input
 
 The Anomaly Detect endpoint ingests time series data of all types, then monitors and detects abnormalities historical time series data. <br><br> Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
 
@@ -33,7 +33,7 @@ api_instance = brainrex.AnomalyApi(brainrex.ApiClient(configuration))
 request = brainrex.TimeSeries() # TimeSeries | Time Series to be analyzed, with the following format. (optional)
 
 try:
-    # Detects anomaly in historical data
+    # Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input
     api_response = api_instance.anomaly_batch(request=request)
     pprint(api_response)
 except ApiException as e:

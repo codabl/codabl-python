@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Brainrex General Sentiment API
+    Brainrex API
 
-    Runs the price sentiment service of api.brainrex.com/sentiment/  # noqa: E501
+    Provides anomaly detection and natural language processing technlogies to blockchain developers.  # noqa: E501
 
     OpenAPI spec version: 1.0.1
     
@@ -36,14 +36,14 @@ class LanguageApi(object):
     def language_get_crypto_entities(self, text, **kwargs):  # noqa: E501
         """Named Entity Recognition software capable of understanding cryptocurrency and blockchain speficic language.  # noqa: E501
 
-        Gives a 0 to 1 score, depending on buy/sell sentiment  # noqa: E501
+        This endpoint ingest text and output known entities   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.language_get_crypto_entities(text, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text5 text: String of text to be analyze for investor sentiment. (required)
+        :param Text text: String of text to be analyze for investor sentiment. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -58,14 +58,14 @@ class LanguageApi(object):
     def language_get_crypto_entities_with_http_info(self, text, **kwargs):  # noqa: E501
         """Named Entity Recognition software capable of understanding cryptocurrency and blockchain speficic language.  # noqa: E501
 
-        Gives a 0 to 1 score, depending on buy/sell sentiment  # noqa: E501
+        This endpoint ingest text and output known entities   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.language_get_crypto_entities_with_http_info(text, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text5 text: String of text to be analyze for investor sentiment. (required)
+        :param Text text: String of text to be analyze for investor sentiment. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -133,7 +133,7 @@ class LanguageApi(object):
             collection_formats=collection_formats)
 
     def language_get_general_sentiment(self, text, **kwargs):  # noqa: E501
-        """Sentiment analysis score using a model trained for buy signals.  # noqa: E501
+        """This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.  # noqa: E501
 
         Returns a -1 to 1 score, depending on positive/negative sentiment  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -142,7 +142,7 @@ class LanguageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text3 text: String of text to be analyze for general sentiment. (required)
+        :param Text text: String of text to be analyze for general sentiment. (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -155,7 +155,7 @@ class LanguageApi(object):
             return data
 
     def language_get_general_sentiment_with_http_info(self, text, **kwargs):  # noqa: E501
-        """Sentiment analysis score using a model trained for buy signals.  # noqa: E501
+        """This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.  # noqa: E501
 
         Returns a -1 to 1 score, depending on positive/negative sentiment  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -164,7 +164,7 @@ class LanguageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text3 text: String of text to be analyze for general sentiment. (required)
+        :param Text text: String of text to be analyze for general sentiment. (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -241,7 +241,7 @@ class LanguageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text4 text: String of text to be analyze for investor sentiment. (required)
+        :param Text text: String of text to be analyze for investor sentiment. (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -263,7 +263,7 @@ class LanguageApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text4 text: String of text to be analyze for investor sentiment. (required)
+        :param Text text: String of text to be analyze for investor sentiment. (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.

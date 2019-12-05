@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Brainrex General Sentiment API
+    Brainrex API
 
-    Runs the price sentiment service of api.brainrex.com/sentiment/  # noqa: E501
+    Provides anomaly detection and natural language processing technlogies to blockchain developers.  # noqa: E501
 
     OpenAPI spec version: 1.0.1
     
@@ -31,128 +31,44 @@ class Text(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'base_trading_symbol': 'str',
-        'exchange': 'str',
-        'interval': 'str',
-        'quote_trading_symbol': 'str'
+        'text': 'str'
     }
 
     attribute_map = {
-        'base_trading_symbol': 'base_trading_symbol',
-        'exchange': 'exchange',
-        'interval': 'interval',
-        'quote_trading_symbol': 'quote_trading_symbol'
+        'text': 'text'
     }
 
-    def __init__(self, base_trading_symbol=None, exchange=None, interval=None, quote_trading_symbol=None):  # noqa: E501
+    def __init__(self, text=None):  # noqa: E501
         """Text - a model defined in Swagger"""  # noqa: E501
 
-        self._base_trading_symbol = None
-        self._exchange = None
-        self._interval = None
-        self._quote_trading_symbol = None
+        self._text = None
         self.discriminator = None
 
-        if base_trading_symbol is not None:
-            self.base_trading_symbol = base_trading_symbol
-        if exchange is not None:
-            self.exchange = exchange
-        if interval is not None:
-            self.interval = interval
-        if quote_trading_symbol is not None:
-            self.quote_trading_symbol = quote_trading_symbol
+        if text is not None:
+            self.text = text
 
     @property
-    def base_trading_symbol(self):
-        """Gets the base_trading_symbol of this Text.  # noqa: E501
+    def text(self):
+        """Gets the text of this Text.  # noqa: E501
 
-        Name of the currency pair  # noqa: E501
+        String of text or document to be analyzed  # noqa: E501
 
-        :return: The base_trading_symbol of this Text.  # noqa: E501
+        :return: The text of this Text.  # noqa: E501
         :rtype: str
         """
-        return self._base_trading_symbol
+        return self._text
 
-    @base_trading_symbol.setter
-    def base_trading_symbol(self, base_trading_symbol):
-        """Sets the base_trading_symbol of this Text.
+    @text.setter
+    def text(self, text):
+        """Sets the text of this Text.
 
-        Name of the currency pair  # noqa: E501
+        String of text or document to be analyzed  # noqa: E501
 
-        :param base_trading_symbol: The base_trading_symbol of this Text.  # noqa: E501
+        :param text: The text of this Text.  # noqa: E501
         :type: str
         """
 
-        self._base_trading_symbol = base_trading_symbol
-
-    @property
-    def exchange(self):
-        """Gets the exchange of this Text.  # noqa: E501
-
-        Name of the exchange  # noqa: E501
-
-        :return: The exchange of this Text.  # noqa: E501
-        :rtype: str
-        """
-        return self._exchange
-
-    @exchange.setter
-    def exchange(self, exchange):
-        """Sets the exchange of this Text.
-
-        Name of the exchange  # noqa: E501
-
-        :param exchange: The exchange of this Text.  # noqa: E501
-        :type: str
-        """
-
-        self._exchange = exchange
-
-    @property
-    def interval(self):
-        """Gets the interval of this Text.  # noqa: E501
-
-        Name of the market  # noqa: E501
-
-        :return: The interval of this Text.  # noqa: E501
-        :rtype: str
-        """
-        return self._interval
-
-    @interval.setter
-    def interval(self, interval):
-        """Sets the interval of this Text.
-
-        Name of the market  # noqa: E501
-
-        :param interval: The interval of this Text.  # noqa: E501
-        :type: str
-        """
-
-        self._interval = interval
-
-    @property
-    def quote_trading_symbol(self):
-        """Gets the quote_trading_symbol of this Text.  # noqa: E501
-
-        Name of the data format availables (standard)  # noqa: E501
-
-        :return: The quote_trading_symbol of this Text.  # noqa: E501
-        :rtype: str
-        """
-        return self._quote_trading_symbol
-
-    @quote_trading_symbol.setter
-    def quote_trading_symbol(self, quote_trading_symbol):
-        """Sets the quote_trading_symbol of this Text.
-
-        Name of the data format availables (standard)  # noqa: E501
-
-        :param quote_trading_symbol: The quote_trading_symbol of this Text.  # noqa: E501
-        :type: str
-        """
-
-        self._quote_trading_symbol = quote_trading_symbol
+        self._text = text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

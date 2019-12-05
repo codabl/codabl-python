@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Brainrex General Sentiment API
+    Brainrex API
 
-    Runs the price sentiment service of api.brainrex.com/sentiment/  # noqa: E501
+    Provides anomaly detection and natural language processing technlogies to blockchain developers.  # noqa: E501
 
     OpenAPI spec version: 1.0.1
     
@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import brainrex
-from brainrex.models.text2 import Text2  # noqa: E501
+from brainrex.models.exchange import Exchange  # noqa: E501
 from brainrex.rest import ApiException
 
 
-class TestText2(unittest.TestCase):
-    """Text2 unit test stubs"""
+class TestExchange(unittest.TestCase):
+    """Exchange unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestText2(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testText2(self):
-        """Test Text2"""
+    def testExchange(self):
+        """Test Exchange"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = brainrex.models.text2.Text2()  # noqa: E501
+        # model = brainrex.models.exchange.Exchange()  # noqa: E501
         pass
 
 

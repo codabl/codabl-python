@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Brainrex General Sentiment API
+    Brainrex API
 
-    Runs the price sentiment service of api.brainrex.com/sentiment/  # noqa: E501
+    Provides anomaly detection and natural language processing technlogies to blockchain developers.  # noqa: E501
 
     OpenAPI spec version: 1.0.1
     
@@ -34,7 +34,7 @@ class AnomalyApi(object):
         self.api_client = api_client
 
     def anomaly_batch(self, **kwargs):  # noqa: E501
-        """Detects anomaly in historical data  # noqa: E501
+        """Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input  # noqa: E501
 
         The Anomaly Detect endpoint ingests time series data of all types, then monitors and detects abnormalities historical time series data. <br><br> Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -56,7 +56,7 @@ class AnomalyApi(object):
             return data
 
     def anomaly_batch_with_http_info(self, **kwargs):  # noqa: E501
-        """Detects anomaly in historical data  # noqa: E501
+        """Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input  # noqa: E501
 
         The Anomaly Detect endpoint ingests time series data of all types, then monitors and detects abnormalities historical time series data. <br><br> Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

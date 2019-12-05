@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import brainrex
-from brainrex.models.series_response import SeriesResponse  # noqa: E501
+from brainrex.models.exchange_assets_response_inner import ExchangeAssetsResponseInner  # noqa: E501
 from brainrex.rest import ApiException
 
 
-class TestSeriesResponse(unittest.TestCase):
-    """SeriesResponse unit test stubs"""
+class TestExchangeAssetsResponseInner(unittest.TestCase):
+    """ExchangeAssetsResponseInner unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestSeriesResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSeriesResponse(self):
-        """Test SeriesResponse"""
+    def testExchangeAssetsResponseInner(self):
+        """Test ExchangeAssetsResponseInner"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = brainrex.models.series_response.SeriesResponse()  # noqa: E501
+        # model = brainrex.models.exchange_assets_response_inner.ExchangeAssetsResponseInner()  # noqa: E501
         pass
 
 

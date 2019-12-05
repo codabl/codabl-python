@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Brainrex General Sentiment API
+    Brainrex API
 
-    Runs the price sentiment service of api.brainrex.com/sentiment/  # noqa: E501
+    Provides anomaly detection and natural language processing technlogies to blockchain developers.  # noqa: E501
 
     OpenAPI spec version: 1.0.1
     
@@ -13,8 +13,8 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "brainrex-client"
-VERSION = "0.9.0"
+NAME = "brainrex"
+VERSION = "0.9.4"
 # To install the library, run the following
 #
 # python setup.py install
@@ -33,14 +33,14 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="Brainrex General Sentiment API",
+    description="Brainrex API",
     author_email="",
-    url="",
-    keywords=["Swagger", "Brainrex General Sentiment API"],
+    url="https://github.com/BrainrexAPI/brainrex-python",
+    keywords=["Swagger", "Brainrex API"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    Runs the price sentiment service of api.brainrex.com/sentiment/  # noqa: E501
+    Provides anomaly detection and natural language processing technlogies to blockchain developers.  # noqa: E501
     """
 )

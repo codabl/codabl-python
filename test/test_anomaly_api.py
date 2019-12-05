@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Brainrex General Sentiment API
+    Brainrex API
 
-    Runs the price sentiment service of api.brainrex.com/sentiment/  # noqa: E501
+    Provides anomaly detection and natural language processing technlogies to blockchain developers.  # noqa: E501
 
     OpenAPI spec version: 1.0.1
     
@@ -32,7 +32,7 @@ class TestAnomalyApi(unittest.TestCase):
     def test_anomaly_batch(self):
         """Test case for anomaly_batch
 
-        Detects anomaly in historical data  # noqa: E501
+        Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input  # noqa: E501
         """
         pass
 

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Brainrex General Sentiment API
+    Brainrex API
 
-    Runs the price sentiment service of api.brainrex.com/sentiment/  # noqa: E501
+    Provides anomaly detection and natural language processing technlogies to blockchain developers.  # noqa: E501
 
     OpenAPI spec version: 1.0.1
     
@@ -33,45 +33,45 @@ class IntegrationsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def crypto_get_candle_data(self, text, **kwargs):  # noqa: E501
+    def crypto_get_candle_data(self, candle_request, **kwargs):  # noqa: E501
         """Downloads candle format market data  # noqa: E501
 
         Returns a list of candle data from specified market and data range  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.crypto_get_candle_data(text, async_req=True)
+        >>> thread = api.crypto_get_candle_data(candle_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text text: Exchange, trading pair and date rage for data (required)
+        :param CandleRequest candle_request: The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console (required)
         :return: CandleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.crypto_get_candle_data_with_http_info(text, **kwargs)  # noqa: E501
+            return self.crypto_get_candle_data_with_http_info(candle_request, **kwargs)  # noqa: E501
         else:
-            (data) = self.crypto_get_candle_data_with_http_info(text, **kwargs)  # noqa: E501
+            (data) = self.crypto_get_candle_data_with_http_info(candle_request, **kwargs)  # noqa: E501
             return data
 
-    def crypto_get_candle_data_with_http_info(self, text, **kwargs):  # noqa: E501
+    def crypto_get_candle_data_with_http_info(self, candle_request, **kwargs):  # noqa: E501
         """Downloads candle format market data  # noqa: E501
 
         Returns a list of candle data from specified market and data range  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.crypto_get_candle_data_with_http_info(text, async_req=True)
+        >>> thread = api.crypto_get_candle_data_with_http_info(candle_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text text: Exchange, trading pair and date rage for data (required)
+        :param CandleRequest candle_request: The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console (required)
         :return: CandleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['text']  # noqa: E501
+        all_params = ['candle_request']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -86,10 +86,10 @@ class IntegrationsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'text' is set
-        if ('text' not in params or
-                params['text'] is None):
-            raise ValueError("Missing the required parameter `text` when calling `crypto_get_candle_data`")  # noqa: E501
+        # verify the required parameter 'candle_request' is set
+        if ('candle_request' not in params or
+                params['candle_request'] is None):
+            raise ValueError("Missing the required parameter `candle_request` when calling `crypto_get_candle_data`")  # noqa: E501
 
         collection_formats = {}
 
@@ -103,8 +103,8 @@ class IntegrationsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'text' in params:
-            body_params = params['text']
+        if 'candle_request' in params:
+            body_params = params['candle_request']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -132,45 +132,45 @@ class IntegrationsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def crypto_get_exchange_assets(self, exchange_name, **kwargs):  # noqa: E501
+    def crypto_get_exchange_assets(self, exchange, **kwargs):  # noqa: E501
         """Gets all currency pairs traded in selected exchange  # noqa: E501
 
         Returns a list of candle data from specified market and data range  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.crypto_get_exchange_assets(exchange_name, async_req=True)
+        >>> thread = api.crypto_get_exchange_assets(exchange, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ExchangeName exchange_name: Name of the cryptocurrency exchange (required)
-        :return: OHCLV
+        :param Exchange exchange: Name of the cryptocurrency exchange (required)
+        :return: ExchangeAssetsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.crypto_get_exchange_assets_with_http_info(exchange_name, **kwargs)  # noqa: E501
+            return self.crypto_get_exchange_assets_with_http_info(exchange, **kwargs)  # noqa: E501
         else:
-            (data) = self.crypto_get_exchange_assets_with_http_info(exchange_name, **kwargs)  # noqa: E501
+            (data) = self.crypto_get_exchange_assets_with_http_info(exchange, **kwargs)  # noqa: E501
             return data
 
-    def crypto_get_exchange_assets_with_http_info(self, exchange_name, **kwargs):  # noqa: E501
+    def crypto_get_exchange_assets_with_http_info(self, exchange, **kwargs):  # noqa: E501
         """Gets all currency pairs traded in selected exchange  # noqa: E501
 
         Returns a list of candle data from specified market and data range  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.crypto_get_exchange_assets_with_http_info(exchange_name, async_req=True)
+        >>> thread = api.crypto_get_exchange_assets_with_http_info(exchange, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ExchangeName exchange_name: Name of the cryptocurrency exchange (required)
-        :return: OHCLV
+        :param Exchange exchange: Name of the cryptocurrency exchange (required)
+        :return: ExchangeAssetsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['exchange_name']  # noqa: E501
+        all_params = ['exchange']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -185,10 +185,10 @@ class IntegrationsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'exchange_name' is set
-        if ('exchange_name' not in params or
-                params['exchange_name'] is None):
-            raise ValueError("Missing the required parameter `exchange_name` when calling `crypto_get_exchange_assets`")  # noqa: E501
+        # verify the required parameter 'exchange' is set
+        if ('exchange' not in params or
+                params['exchange'] is None):
+            raise ValueError("Missing the required parameter `exchange` when calling `crypto_get_exchange_assets`")  # noqa: E501
 
         collection_formats = {}
 
@@ -202,8 +202,8 @@ class IntegrationsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'exchange_name' in params:
-            body_params = params['exchange_name']
+        if 'exchange' in params:
+            body_params = params['exchange']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -223,7 +223,7 @@ class IntegrationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='OHCLV',  # noqa: E501
+            response_type='ExchangeAssetsResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -231,45 +231,45 @@ class IntegrationsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def crypto_get_orderbooks(self, text, **kwargs):  # noqa: E501
+    def crypto_get_orderbooks(self, orderbook_request, **kwargs):  # noqa: E501
         """Downloads candle format market data  # noqa: E501
 
         Returns a list of candle data from specified market and data range  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.crypto_get_orderbooks(text, async_req=True)
+        >>> thread = api.crypto_get_orderbooks(orderbook_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text1 text: Exchange, trading pair and date rage for data (required)
-        :return: OHCLV
+        :param OrderbookRequest orderbook_request: Exchange, trading pair and date rage for data (required)
+        :return: OrderbookResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.crypto_get_orderbooks_with_http_info(text, **kwargs)  # noqa: E501
+            return self.crypto_get_orderbooks_with_http_info(orderbook_request, **kwargs)  # noqa: E501
         else:
-            (data) = self.crypto_get_orderbooks_with_http_info(text, **kwargs)  # noqa: E501
+            (data) = self.crypto_get_orderbooks_with_http_info(orderbook_request, **kwargs)  # noqa: E501
             return data
 
-    def crypto_get_orderbooks_with_http_info(self, text, **kwargs):  # noqa: E501
+    def crypto_get_orderbooks_with_http_info(self, orderbook_request, **kwargs):  # noqa: E501
         """Downloads candle format market data  # noqa: E501
 
         Returns a list of candle data from specified market and data range  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.crypto_get_orderbooks_with_http_info(text, async_req=True)
+        >>> thread = api.crypto_get_orderbooks_with_http_info(orderbook_request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text1 text: Exchange, trading pair and date rage for data (required)
-        :return: OHCLV
+        :param OrderbookRequest orderbook_request: Exchange, trading pair and date rage for data (required)
+        :return: OrderbookResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['text']  # noqa: E501
+        all_params = ['orderbook_request']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -284,10 +284,10 @@ class IntegrationsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'text' is set
-        if ('text' not in params or
-                params['text'] is None):
-            raise ValueError("Missing the required parameter `text` when calling `crypto_get_orderbooks`")  # noqa: E501
+        # verify the required parameter 'orderbook_request' is set
+        if ('orderbook_request' not in params or
+                params['orderbook_request'] is None):
+            raise ValueError("Missing the required parameter `orderbook_request` when calling `crypto_get_orderbooks`")  # noqa: E501
 
         collection_formats = {}
 
@@ -301,8 +301,8 @@ class IntegrationsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'text' in params:
-            body_params = params['text']
+        if 'orderbook_request' in params:
+            body_params = params['orderbook_request']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -322,7 +322,7 @@ class IntegrationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='OHCLV',  # noqa: E501
+            response_type='OrderbookResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -340,7 +340,7 @@ class IntegrationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: None
+        :return: SupportedExchanges
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -361,7 +361,7 @@ class IntegrationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: None
+        :return: SupportedExchanges
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -413,7 +413,7 @@ class IntegrationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='SupportedExchanges',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -421,45 +421,45 @@ class IntegrationsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def crypto_get_ticker(self, text, **kwargs):  # noqa: E501
+    def crypto_get_ticker(self, exchange, **kwargs):  # noqa: E501
         """Downloads candle format market data  # noqa: E501
 
         Returns a list of candle data from specified market and data range  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.crypto_get_ticker(text, async_req=True)
+        >>> thread = api.crypto_get_ticker(exchange, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text2 text: Get ticker data from specified crypto exchange (required)
-        :return: OHCLV
+        :param Exchange exchange: Get ticker data from specified crypto exchange (required)
+        :return: TickerResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.crypto_get_ticker_with_http_info(text, **kwargs)  # noqa: E501
+            return self.crypto_get_ticker_with_http_info(exchange, **kwargs)  # noqa: E501
         else:
-            (data) = self.crypto_get_ticker_with_http_info(text, **kwargs)  # noqa: E501
+            (data) = self.crypto_get_ticker_with_http_info(exchange, **kwargs)  # noqa: E501
             return data
 
-    def crypto_get_ticker_with_http_info(self, text, **kwargs):  # noqa: E501
+    def crypto_get_ticker_with_http_info(self, exchange, **kwargs):  # noqa: E501
         """Downloads candle format market data  # noqa: E501
 
         Returns a list of candle data from specified market and data range  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.crypto_get_ticker_with_http_info(text, async_req=True)
+        >>> thread = api.crypto_get_ticker_with_http_info(exchange, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Text2 text: Get ticker data from specified crypto exchange (required)
-        :return: OHCLV
+        :param Exchange exchange: Get ticker data from specified crypto exchange (required)
+        :return: TickerResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['text']  # noqa: E501
+        all_params = ['exchange']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -474,10 +474,10 @@ class IntegrationsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'text' is set
-        if ('text' not in params or
-                params['text'] is None):
-            raise ValueError("Missing the required parameter `text` when calling `crypto_get_ticker`")  # noqa: E501
+        # verify the required parameter 'exchange' is set
+        if ('exchange' not in params or
+                params['exchange'] is None):
+            raise ValueError("Missing the required parameter `exchange` when calling `crypto_get_ticker`")  # noqa: E501
 
         collection_formats = {}
 
@@ -491,8 +491,8 @@ class IntegrationsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'text' in params:
-            body_params = params['text']
+        if 'exchange' in params:
+            body_params = params['exchange']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -512,7 +512,7 @@ class IntegrationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='OHCLV',  # noqa: E501
+            response_type='TickerResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
