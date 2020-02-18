@@ -1,41 +1,41 @@
-# brainrex.LanguageApi
+# codabl.LanguageApi
 
 All URIs are relative to *https://api.bitlongs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**language_get_crypto_entities**](LanguageApi.md#language_get_crypto_entities) | **POST** /entity/get_crypto_entities | Named Entity Recognition software capable of understanding cryptocurrency and blockchain speficic language.
-[**language_get_general_sentiment**](LanguageApi.md#language_get_general_sentiment) | **POST** /sentiment/get_general_sentiment | This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.
+[**language_get_crypto_entities**](LanguageApi.md#language_get_crypto_entities) | **POST** /entity/get_crypto_entities | Extracts known crypto entities like coin names, exchanges, media from text.
+[**language_get_general_sentiment**](LanguageApi.md#language_get_general_sentiment) | **POST** /sentiment/get_general_sentiment | Returns a -1 to 1 score, depending on positive/negative sentiment
 [**language_get_price_sentiment**](LanguageApi.md#language_get_price_sentiment) | **POST** /language/get_price_sentiment | Sentiment analysis score using a model trained for buy signals.
 
 
 # **language_get_crypto_entities**
 > language_get_crypto_entities(text)
 
-Named Entity Recognition software capable of understanding cryptocurrency and blockchain speficic language.
+Extracts known crypto entities like coin names, exchanges, media from text.
 
-This endpoint ingest text and output known entities 
+The Crypto Entities endpoint ingests written MIT Digital Currency Initiative Paper A paper describing how our sentiment and entity analyzer are built. And how the can be used for trading several cryptocurrencies successfully  We prove that using sentiment only as a input to a trading algorithm can be profitable. If combined with other machine learning models. We descri This Paper could be published in MIT Crypto Economics Journal . . <br><br> Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
 
 ### Example
 ```python
 from __future__ import print_function
 import time
-import brainrex
-from brainrex.rest import ApiException
+import codabl
+from codabl.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = brainrex.Configuration()
+configuration = codabl.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = brainrex.LanguageApi(brainrex.ApiClient(configuration))
-text = brainrex.Text() # Text | String of text to be analyze for investor sentiment.
+api_instance = codabl.LanguageApi(codabl.ApiClient(configuration))
+text = codabl.Text() # Text | String of text to be analyze for investor sentiment.
 
 try:
-    # Named Entity Recognition software capable of understanding cryptocurrency and blockchain speficic language.
+    # Extracts known crypto entities like coin names, exchanges, media from text.
     api_instance.language_get_crypto_entities(text)
 except ApiException as e:
     print("Exception when calling LanguageApi->language_get_crypto_entities: %s\n" % e)
@@ -65,30 +65,30 @@ void (empty response body)
 # **language_get_general_sentiment**
 > str language_get_general_sentiment(text)
 
-This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.
-
 Returns a -1 to 1 score, depending on positive/negative sentiment
+
+This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.
 
 ### Example
 ```python
 from __future__ import print_function
 import time
-import brainrex
-from brainrex.rest import ApiException
+import codabl
+from codabl.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = brainrex.Configuration()
+configuration = codabl.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = brainrex.LanguageApi(brainrex.ApiClient(configuration))
-text = brainrex.Text() # Text | String of text to be analyze for general sentiment.
+api_instance = codabl.LanguageApi(codabl.ApiClient(configuration))
+text = codabl.Text() # Text | String of text to be analyze for general sentiment.
 
 try:
-    # This endpoints returns a score from -1 to +1 where depending on negative or positive attitude in the text.
+    # Returns a -1 to 1 score, depending on positive/negative sentiment
     api_response = api_instance.language_get_general_sentiment(text)
     pprint(api_response)
 except ApiException as e:
@@ -127,19 +127,19 @@ Gives a 0 to 1 score, depending on buy/sell sentiment
 ```python
 from __future__ import print_function
 import time
-import brainrex
-from brainrex.rest import ApiException
+import codabl
+from codabl.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = brainrex.Configuration()
+configuration = codabl.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = brainrex.LanguageApi(brainrex.ApiClient(configuration))
-text = brainrex.Text() # Text | String of text to be analyze for investor sentiment.
+api_instance = codabl.LanguageApi(codabl.ApiClient(configuration))
+text = codabl.Text() # Text | String of text to be analyze for investor sentiment.
 
 try:
     # Sentiment analysis score using a model trained for buy signals.

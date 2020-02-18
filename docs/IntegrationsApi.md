@@ -1,13 +1,13 @@
-# brainrex.IntegrationsApi
+# codabl.IntegrationsApi
 
 All URIs are relative to *https://api.bitlongs.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**crypto_get_candle_data**](IntegrationsApi.md#crypto_get_candle_data) | **POST** /crypto/get_candles | Downloads candle format market data
-[**crypto_get_exchange_assets**](IntegrationsApi.md#crypto_get_exchange_assets) | **POST** /crypto/get_exchange_assets | Gets all currency pairs traded in selected exchange
-[**crypto_get_orderbooks**](IntegrationsApi.md#crypto_get_orderbooks) | **POST** /crypto/get_orderbooks | Downloads candle format market data
-[**crypto_get_supported_exchanges**](IntegrationsApi.md#crypto_get_supported_exchanges) | **GET** /crypto/get_supported_exchanges | Gets all cryptocurrency exchanges supported by the Brainrex API
+[**crypto_get_exchange_assets**](IntegrationsApi.md#crypto_get_exchange_assets) | **POST** /crypto/get_exchange_assets | Gets all coin pairs traded in specified exchange
+[**crypto_get_orderbooks**](IntegrationsApi.md#crypto_get_orderbooks) | **POST** /crypto/get_orderbooks | Returns the current state of the orderbook.
+[**crypto_get_supported_exchanges**](IntegrationsApi.md#crypto_get_supported_exchanges) | **GET** /crypto/get_supported_exchanges | Gets all cryptocurrency exchanges supported by the Codabl API
 [**crypto_get_ticker**](IntegrationsApi.md#crypto_get_ticker) | **POST** /crypto/get_ticker | Downloads candle format market data
 
 
@@ -22,19 +22,19 @@ Returns a list of candle data from specified market and data range
 ```python
 from __future__ import print_function
 import time
-import brainrex
-from brainrex.rest import ApiException
+import codabl
+from codabl.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = brainrex.Configuration()
+configuration = codabl.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = brainrex.IntegrationsApi(brainrex.ApiClient(configuration))
-candle_request = brainrex.CandleRequest() # CandleRequest | The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console
+api_instance = codabl.IntegrationsApi(codabl.ApiClient(configuration))
+candle_request = codabl.CandleRequest() # CandleRequest | The Get candles end point return market data in Open High Close Volume format. In order to use this endpoint you need to enter your API keys to your data provider in the console
 
 try:
     # Downloads candle format market data
@@ -68,30 +68,30 @@ Name | Type | Description  | Notes
 # **crypto_get_exchange_assets**
 > ExchangeAssetsResponse crypto_get_exchange_assets(exchange)
 
-Gets all currency pairs traded in selected exchange
+Gets all coin pairs traded in specified exchange
 
-Returns a list of candle data from specified market and data range
+This endpoint returns all the Available currency pairs
 
 ### Example
 ```python
 from __future__ import print_function
 import time
-import brainrex
-from brainrex.rest import ApiException
+import codabl
+from codabl.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = brainrex.Configuration()
+configuration = codabl.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = brainrex.IntegrationsApi(brainrex.ApiClient(configuration))
-exchange = brainrex.Exchange() # Exchange | Name of the cryptocurrency exchange
+api_instance = codabl.IntegrationsApi(codabl.ApiClient(configuration))
+exchange = codabl.Exchange() # Exchange | Name of the cryptocurrency exchange
 
 try:
-    # Gets all currency pairs traded in selected exchange
+    # Gets all coin pairs traded in specified exchange
     api_response = api_instance.crypto_get_exchange_assets(exchange)
     pprint(api_response)
 except ApiException as e:
@@ -122,30 +122,30 @@ Name | Type | Description  | Notes
 # **crypto_get_orderbooks**
 > OrderbookResponse crypto_get_orderbooks(orderbook_request)
 
-Downloads candle format market data
+Returns the current state of the orderbook.
 
-Returns a list of candle data from specified market and data range
+This endpoint returns the current state of the ordebook with a limit set by you. The maximun orderbook depth is 25.
 
 ### Example
 ```python
 from __future__ import print_function
 import time
-import brainrex
-from brainrex.rest import ApiException
+import codabl
+from codabl.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = brainrex.Configuration()
+configuration = codabl.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = brainrex.IntegrationsApi(brainrex.ApiClient(configuration))
-orderbook_request = brainrex.OrderbookRequest() # OrderbookRequest | Exchange, trading pair and date rage for data
+api_instance = codabl.IntegrationsApi(codabl.ApiClient(configuration))
+orderbook_request = codabl.OrderbookRequest() # OrderbookRequest | Exchange, trading pair and date rage for data
 
 try:
-    # Downloads candle format market data
+    # Returns the current state of the orderbook.
     api_response = api_instance.crypto_get_orderbooks(orderbook_request)
     pprint(api_response)
 except ApiException as e:
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 # **crypto_get_supported_exchanges**
 > SupportedExchanges crypto_get_supported_exchanges()
 
-Gets all cryptocurrency exchanges supported by the Brainrex API
+Gets all cryptocurrency exchanges supported by the Codabl API
 
 Returns a list of candle data from specified market and data range
 
@@ -184,21 +184,21 @@ Returns a list of candle data from specified market and data range
 ```python
 from __future__ import print_function
 import time
-import brainrex
-from brainrex.rest import ApiException
+import codabl
+from codabl.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = brainrex.Configuration()
+configuration = codabl.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = brainrex.IntegrationsApi(brainrex.ApiClient(configuration))
+api_instance = codabl.IntegrationsApi(codabl.ApiClient(configuration))
 
 try:
-    # Gets all cryptocurrency exchanges supported by the Brainrex API
+    # Gets all cryptocurrency exchanges supported by the Codabl API
     api_response = api_instance.crypto_get_supported_exchanges()
     pprint(api_response)
 except ApiException as e:
@@ -234,19 +234,19 @@ Returns a list of candle data from specified market and data range
 ```python
 from __future__ import print_function
 import time
-import brainrex
-from brainrex.rest import ApiException
+import codabl
+from codabl.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = brainrex.Configuration()
+configuration = codabl.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = brainrex.IntegrationsApi(brainrex.ApiClient(configuration))
-exchange = brainrex.Exchange() # Exchange | Get ticker data from specified crypto exchange
+api_instance = codabl.IntegrationsApi(codabl.ApiClient(configuration))
+exchange = codabl.Exchange() # Exchange | Get ticker data from specified crypto exchange
 
 try:
     # Downloads candle format market data

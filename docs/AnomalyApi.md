@@ -1,4 +1,4 @@
-# brainrex.AnomalyApi
+# codabl.AnomalyApi
 
 All URIs are relative to *https://api.bitlongs.com*
 
@@ -18,19 +18,19 @@ The Anomaly Detect endpoint ingests time series data of all types, then monitors
 ```python
 from __future__ import print_function
 import time
-import brainrex
-from brainrex.rest import ApiException
+import codabl
+from codabl.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = brainrex.Configuration()
+configuration = codabl.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = brainrex.AnomalyApi(brainrex.ApiClient(configuration))
-request = brainrex.TimeSeries() # TimeSeries | Time Series to be analyzed, with the following format. (optional)
+api_instance = codabl.AnomalyApi(codabl.ApiClient(configuration))
+request = codabl.TimeSeries() # TimeSeries | Time Series to be analyzed, with the following format. (optional)
 
 try:
     # Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input
