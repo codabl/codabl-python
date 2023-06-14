@@ -1,14 +1,13 @@
-# codabl.AnomalyApi
+# swagger_client.AnomalyApi
 
-All URIs are relative to *https://api.bitlongs.com*
+All URIs are relative to *https://api.brainrex.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**anomaly_batch**](AnomalyApi.md#anomaly_batch) | **POST** /anomaly/json/detect | Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input
 
-
 # **anomaly_batch**
-> list[bool] anomaly_batch(request=request)
+> list[bool] anomaly_batch(body=body)
 
 Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input
 
@@ -18,23 +17,23 @@ The Anomaly Detect endpoint ingests time series data of all types, then monitors
 ```python
 from __future__ import print_function
 import time
-import codabl
-from codabl.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = codabl.Configuration()
+configuration = swagger_client.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = codabl.AnomalyApi(codabl.ApiClient(configuration))
-request = codabl.TimeSeries() # TimeSeries | Time Series to be analyzed, with the following format. (optional)
+api_instance = swagger_client.AnomalyApi(swagger_client.ApiClient(configuration))
+body = [swagger_client.PointTimeSeries()] # list[PointTimeSeries] | Time Series to be analyzed, with the following format. (optional)
 
 try:
     # Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input
-    api_response = api_instance.anomaly_batch(request=request)
+    api_response = api_instance.anomaly_batch(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AnomalyApi->anomaly_batch: %s\n" % e)
@@ -44,7 +43,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**TimeSeries**](TimeSeries.md)| Time Series to be analyzed, with the following format. | [optional] 
+ **body** | [**list[PointTimeSeries]**](PointTimeSeries.md)| Time Series to be analyzed, with the following format. | [optional] 
 
 ### Return type
 

@@ -1,6 +1,6 @@
-# codabl.LanguageApi
+# swagger_client.LanguageApi
 
-All URIs are relative to *https://api.bitlongs.com*
+All URIs are relative to *https://api.brainrex.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,9 +8,8 @@ Method | HTTP request | Description
 [**language_get_general_sentiment**](LanguageApi.md#language_get_general_sentiment) | **POST** /sentiment/get_general_sentiment | Returns a -1 to 1 score, depending on positive/negative sentiment
 [**language_get_price_sentiment**](LanguageApi.md#language_get_price_sentiment) | **POST** /language/get_price_sentiment | Sentiment analysis score using a model trained for buy signals.
 
-
 # **language_get_crypto_entities**
-> language_get_crypto_entities(text)
+> language_get_crypto_entities(body)
 
 Extracts known crypto entities like coin names, exchanges, media from text.
 
@@ -20,23 +19,23 @@ The Crypto Entities endpoint ingests written MIT Digital Currency Initiative Pap
 ```python
 from __future__ import print_function
 import time
-import codabl
-from codabl.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = codabl.Configuration()
+configuration = swagger_client.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = codabl.LanguageApi(codabl.ApiClient(configuration))
-text = codabl.Text() # Text | String of text to be analyze for investor sentiment.
+api_instance = swagger_client.LanguageApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Text() # Text | String of text to be analyze for investor sentiment.
 
 try:
     # Extracts known crypto entities like coin names, exchanges, media from text.
-    api_instance.language_get_crypto_entities(text)
+    api_instance.language_get_crypto_entities(body)
 except ApiException as e:
     print("Exception when calling LanguageApi->language_get_crypto_entities: %s\n" % e)
 ```
@@ -45,7 +44,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | [**Text**](Text.md)| String of text to be analyze for investor sentiment. | 
+ **body** | [**Text**](Text.md)| String of text to be analyze for investor sentiment. | 
 
 ### Return type
 
@@ -58,12 +57,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **language_get_general_sentiment**
-> str language_get_general_sentiment(text)
+> str language_get_general_sentiment(body)
 
 Returns a -1 to 1 score, depending on positive/negative sentiment
 
@@ -73,23 +72,23 @@ This endpoints returns a score from -1 to +1 where depending on negative or posi
 ```python
 from __future__ import print_function
 import time
-import codabl
-from codabl.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = codabl.Configuration()
+configuration = swagger_client.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = codabl.LanguageApi(codabl.ApiClient(configuration))
-text = codabl.Text() # Text | String of text to be analyze for general sentiment.
+api_instance = swagger_client.LanguageApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Text() # Text | String of text to be analyze for general sentiment.
 
 try:
     # Returns a -1 to 1 score, depending on positive/negative sentiment
-    api_response = api_instance.language_get_general_sentiment(text)
+    api_response = api_instance.language_get_general_sentiment(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LanguageApi->language_get_general_sentiment: %s\n" % e)
@@ -99,7 +98,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | [**Text**](Text.md)| String of text to be analyze for general sentiment. | 
+ **body** | [**Text**](Text.md)| String of text to be analyze for general sentiment. | 
 
 ### Return type
 
@@ -117,7 +116,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **language_get_price_sentiment**
-> str language_get_price_sentiment(text)
+> str language_get_price_sentiment(body)
 
 Sentiment analysis score using a model trained for buy signals.
 
@@ -127,23 +126,23 @@ Gives a 0 to 1 score, depending on buy/sell sentiment
 ```python
 from __future__ import print_function
 import time
-import codabl
-from codabl.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = codabl.Configuration()
+configuration = swagger_client.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = codabl.LanguageApi(codabl.ApiClient(configuration))
-text = codabl.Text() # Text | String of text to be analyze for investor sentiment.
+api_instance = swagger_client.LanguageApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Text() # Text | String of text to be analyze for investor sentiment.
 
 try:
     # Sentiment analysis score using a model trained for buy signals.
-    api_response = api_instance.language_get_price_sentiment(text)
+    api_response = api_instance.language_get_price_sentiment(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LanguageApi->language_get_price_sentiment: %s\n" % e)
@@ -153,7 +152,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | [**Text**](Text.md)| String of text to be analyze for investor sentiment. | 
+ **body** | [**Text**](Text.md)| String of text to be analyze for investor sentiment. | 
 
 ### Return type
 
