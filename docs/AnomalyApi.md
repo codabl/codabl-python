@@ -1,4 +1,4 @@
-# swagger_client.AnomalyApi
+# brainrex.AnomalyApi
 
 All URIs are relative to *https://api.brainrex.com*
 
@@ -17,19 +17,19 @@ The Anomaly Detect endpoint ingests time series data of all types, then monitors
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import brainrex
+from brainrex.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = swagger_client.Configuration()
+configuration = brainrex.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.AnomalyApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.PointTimeSeries()] # list[PointTimeSeries] | Time Series to be analyzed, with the following format. (optional)
+api_instance = brainrex.AnomalyApi(brainrex.ApiClient(configuration))
+body = [brainrex.PointTimeSeries()] # list[PointTimeSeries] | Time Series to be analyzed, with the following format. (optional)
 
 try:
     # Detects anomalies in historical data in batches. This endpoint uses your entire dataset as input

@@ -1,4 +1,4 @@
-# swagger_client.LanguageApi
+# brainrex.LanguageApi
 
 All URIs are relative to *https://api.brainrex.com*
 
@@ -13,25 +13,25 @@ Method | HTTP request | Description
 
 Extracts known crypto entities like coin names, exchanges, media from text.
 
-The Crypto Entities endpoint ingests written MIT Digital Currency Initiative Paper A paper describing how our sentiment and entity analyzer are built. And how the can be used for trading several cryptocurrencies successfully  We prove that using sentiment only as a input to a trading algorithm can be profitable. If combined with other machine learning models. We descri This Paper could be published in MIT Crypto Economics Journal . . <br><br> Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
+The Crypto Entities endpoint ingests written MIT Digital Currency Initiative Paper A paper describing how our sentiment and entity analyzer are built. And how the can be used for trading several cryptocurrencies successfully  We prove that using sentiment only as a input to a trading algorithm can be profitable. If combined with other machine learning models. This Paper could be published in MIT Crypto Economics Journal. <br><br> Our AI selects from several models, choosing the one that fits the given data best, and we give you the avality to customize the sensitivy of the model. Our model has been trained to recognize anomalies in popular blockchain networks e.g. Bitcoin, Ethereum, learning from past events.
 
 ### Example
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import brainrex
+from brainrex.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = swagger_client.Configuration()
+configuration = brainrex.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.LanguageApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Text() # Text | String of text to be analyze for investor sentiment.
+api_instance = brainrex.LanguageApi(brainrex.ApiClient(configuration))
+body = brainrex.Text() # Text | String of text to be analyze for investor sentiment.
 
 try:
     # Extracts known crypto entities like coin names, exchanges, media from text.
@@ -72,19 +72,19 @@ This endpoints returns a score from -1 to +1 where depending on negative or posi
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import brainrex
+from brainrex.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = swagger_client.Configuration()
+configuration = brainrex.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.LanguageApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Text() # Text | String of text to be analyze for general sentiment.
+api_instance = brainrex.LanguageApi(brainrex.ApiClient(configuration))
+body = brainrex.Text() # Text | String of text to be analyze for general sentiment.
 
 try:
     # Returns a -1 to 1 score, depending on positive/negative sentiment
@@ -126,19 +126,19 @@ Gives a 0 to 1 score, depending on buy/sell sentiment
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import brainrex
+from brainrex.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: APIKeyHeader
-configuration = swagger_client.Configuration()
+configuration = brainrex.Configuration()
 configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.LanguageApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Text() # Text | String of text to be analyze for investor sentiment.
+api_instance = brainrex.LanguageApi(brainrex.ApiClient(configuration))
+body = brainrex.Text() # Text | String of text to be analyze for investor sentiment.
 
 try:
     # Sentiment analysis score using a model trained for buy signals.
